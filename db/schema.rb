@@ -25,6 +25,11 @@ ActiveRecord::Schema.define(version: 2021_12_21_190324) do
     t.index ["country"], name: "index_country_temperatures_on_country"
   end
 
+  create_table "dashboards", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "state_temperatures", force: :cascade do |t|
     t.date "recordedAt"
     t.decimal "averageTemperature", precision: 10, scale: 2
