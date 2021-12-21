@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(version: 2021_12_21_190324) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "notes", force: :cascade do |t|
+    t.bigint "dashboard_id"
+    t.jsonb "content", default: {}, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dashboard_id"], name: "index_notes_on_dashboard_id"
+  end
+
   create_table "state_temperatures", force: :cascade do |t|
     t.date "recordedAt"
     t.decimal "averageTemperature", precision: 10, scale: 2
