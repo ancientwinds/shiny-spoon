@@ -6,6 +6,19 @@ class DashboardController < ActionController::Base
 
   # GET /dashboard/1
   def show
-    render html: { message: 'Hello 1' }
+    @dashboard = Dashboard.find(params[:id])
+    render json: { message: @dashboard }
+  end
+
+  # POST /dashboard
+  def create
+    @dashboard = Dashboard.create!(dashboard_params)
+    render json: { message: @dashboard }
+  end
+
+  private
+
+  def dashboard_params
+    params.require(:dashboard)
   end
 end

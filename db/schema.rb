@@ -69,8 +69,6 @@ ActiveRecord::Schema.define(version: 2021_12_21_190324) do
     t.datetime "date"
     t.bigint "average_impact_level"
     t.integer "tweet_count"
-    t.datetime "created_at", precision: 6, default: -> { "now()" }, null: false
-    t.datetime "updated_at", precision: 6, default: -> { "now()" }, null: false
     t.decimal "spx_open"
     t.decimal "spx_close"
     t.decimal "spx_high"
