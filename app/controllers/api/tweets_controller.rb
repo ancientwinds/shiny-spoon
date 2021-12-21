@@ -2,7 +2,7 @@ class Api::TweetsController < ApplicationController
 
   # GET /tweets
   def index
-    @tweets = TrumpTweet.filter(params.slice(:published_at, :hashtags, :mentions, :retweets, :favorites))
+    @tweets = TrumpTweet.filter(params.slice(:publishedAt, :hashtags, :mentions, :retweets, :favorites, :start_date, :end_date))
     json_response(@tweets)
   end
 
@@ -15,6 +15,6 @@ class Api::TweetsController < ApplicationController
   private
 
   def filtering_params(params)
-    params.slice(:published_at, :hashtags, :mentions, :retweets, :favorites)
+    params.slice(:publishedAt, :hashtags, :mentions, :retweets, :favorites, :start_date, :end_date)
   end
 end
