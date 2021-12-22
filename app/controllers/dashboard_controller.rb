@@ -1,7 +1,6 @@
 class DashboardController < ActionController::Base
   # GET /dashboard
   def index
-    render json: { message: TrumpTweet.first.content, status: :ok }
   end
 
   # GET /dashboard/1
