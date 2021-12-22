@@ -1,4 +1,4 @@
-class NotesController < ActionController::Base
+class DataController < ActionController::Base
   # GET /note
   def index
     @notes = Note.all.where(dashboard_id: params[:dashboard_id])
