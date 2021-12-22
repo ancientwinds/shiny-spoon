@@ -62,6 +62,15 @@ build-iPhoneSimulator/
 yarn-debug.log*
 .yarn-integrity
 
+.env.development
+.env.test
+
+db/country_temps-dump.sql
+db/state_temps-dump.sql
+db/trump_tweets.sql
+db/update_sentiment.sql
+
+log/development.log
 *.log
 
 notebooks/.ipynb_checkpoints/
