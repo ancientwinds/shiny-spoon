@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :country_temperatures
     resources :states
     resources :countries
+    resources :tweets_stats
   end
 end
