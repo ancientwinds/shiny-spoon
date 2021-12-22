@@ -15,6 +15,7 @@ class NotesController < ActionController::Base
   def create
     @note = Dashboard.find(params[:dashboard_id]).notes.create!(note_params)
     @note.save ? (render json: { message: @note, status: :ok }) : (render json: { message: @note.errors, status: :unprocessable_entity })
+    NoteChannel.broadcast_to(@note.dashboard, @note)
   end
 
   private
